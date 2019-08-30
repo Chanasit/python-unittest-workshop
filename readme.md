@@ -5,3 +5,6 @@
 
 ## green cli
 2) green
+
+## with mock libs
+- https://docs.python.org/3/library/unittest.mock.html
