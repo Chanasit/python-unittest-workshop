@@ -26,9 +26,9 @@ class TestExample(TestCase):
             def __init__(self):
                 self.callcount = 0
 
-            def random(self,constant):
+            def random_with_constant(self,constant):
                 self.callcount = self.callcount + 1
-                return super().random(constant)
+                return super().random_with_constant(constant)
 
         def stub_random_randint(a,b):
             return 100
@@ -36,7 +36,7 @@ class TestExample(TestCase):
         random.randint = stub_random_randint
 
         example = SpyExample()
-        actual_result = example.random(-1)
+        actual_result = example.random_with_constant(-1)
         expect_result = 99
 
         actual_callcount = example.callcount

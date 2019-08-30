@@ -7,5 +7,5 @@ class Example:
         return float(x + y)
     
     @staticmethod
-    def random(constant):
+    def random_with_constant(constant):
         return constant +  random.randint(1,3)

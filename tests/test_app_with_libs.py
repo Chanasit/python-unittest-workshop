@@ -27,6 +27,6 @@ class TestExampleWithLibs(TestCase):
         randint_mock.return_value = 3
 
         example = Example()
-        actual = example.random(3)
+        actual = example.random_with_constant(3)
 
         self.assertEqual(actual, 6)
