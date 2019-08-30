@@ -29,4 +29,4 @@ class TestExampleWithLibs(TestCase):
         example = Example()
         actual = example.random_with_constant(3)
 
-        self.assertEqual(actual, 6)
+        self.assertEqual(actual, 6, "should be equal randint_mock + constant input")

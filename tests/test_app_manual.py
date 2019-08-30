@@ -42,5 +42,5 @@ class TestExample(TestCase):
         actual_callcount = example.callcount
         expect_callcount = 1
 
-        self.assertEqual(actual_callcount, expect_callcount)
-        self.assertEqual(actual_result, expect_result)
+        self.assertEqual(actual_callcount, expect_callcount, "should be call once")
+        self.assertEqual(actual_result, expect_result, "should be equal randint_mock + constant input")
