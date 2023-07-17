@@ -1,6 +1,6 @@
 # UnitTest Workshop
 
-- require python 3.6 ++
+- require python >= 3.7
 
 ## python install package
 1) pip install -r requirements.txt
