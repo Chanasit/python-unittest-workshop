@@ -6,7 +6,7 @@
 1) pip install -r requirements.txt
 
 ## untitest cli
-2) python -m unittest tests/**.py
+2) python -m unittest tests/**.py -v
 
 ## with mock libs
 - https://docs.python.org/3/library/unittest.mock.html
