@@ -1,11 +1,14 @@
-import random
+from typing import Union
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-class Example:
-    @staticmethod
-    def add(x, y):
-        return float(x + y)
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
 
-    @staticmethod
-    def random_with_constant(constant):
-        return constant + random.randint(1, 3)
+
+@app.get("/items/{item_id}")
+async def read_item(item_id: int, q: Union[str, None] = None):
+    return {"item_id": item_id, "q": q}

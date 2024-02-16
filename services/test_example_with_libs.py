@@ -1,6 +1,6 @@
 from unittest import TestCase
 from mock import patch
-from app import Example
+from services.example import Example
 
 
 class TestExampleWithLibs(TestCase):

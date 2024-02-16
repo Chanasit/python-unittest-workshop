@@ -1,7 +1,5 @@
 from unittest import TestCase
-
-from app import Example, random
-
+from services.example import Example, random
 
 class TestExample(TestCase):
     def test_case1(self):
