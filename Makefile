@@ -1,16 +1,16 @@
 export OSTYPE = $(shell uname)
 
-install: ## pip install
+install: ## install packages
 	pip3 intall -r requirements.txt
 
-test: ## fastapi run
+test: ## run unittest
 	python3 -m unittest services/**.py -v
 
-coverage:
+coverage: ## run unittest coverage
 	python3 -m coverage run -m unittest services/** -vvv
 	python3 -m coverage report
 
-run: ## fastapi run
+run: ## run applciation
 	python3 -m gunicorn -k uvicorn.workers.UvicornWorker app:app
 
 help:
