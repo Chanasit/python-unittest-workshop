@@ -15,10 +15,15 @@
 - require python >= 3.9
 
 ## python install package
-1) pip install -r requirements.txt
+```
+make install
+```
 
-## untitest cli
-2) python -m unittest tests/**.py -v
+## unittest
+```
+make test
+make coverage
+```
 
-## with mock libs
+## ref libraries
 - https://docs.python.org/3/library/unittest.mock.html
