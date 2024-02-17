@@ -1,4 +1,4 @@
-from repositories.random import RandomRepository
+from app.repositories.random import RandomRepository
 
 class CalculatorService:
 

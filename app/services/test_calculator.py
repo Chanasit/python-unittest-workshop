@@ -1,6 +1,6 @@
 from unittest import TestCase
-from services.calculator import CalculatorService
-from repositories.random import RandomRepository
+from app.services.calculator import CalculatorService
+from app.repositories.random import RandomRepository
 
 
 # Manual mock random repository

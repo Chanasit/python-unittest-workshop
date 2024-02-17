@@ -3,6 +3,9 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+import os
+print(os.getenv("AWS_KEY"))
+
 
 @app.get("/")
 async def read_root():
