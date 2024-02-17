@@ -1,12 +1,13 @@
 from unittest import TestCase
 from mock import patch
-from services.calculator import CalculatorService, RandomRepository
+from services.calculator import CalculatorService
+from repositories.random import RandomRepository
 
 
 class TestCalculatorService(TestCase):
 
 
-    @patch("services.calculator.RandomRepository")
+    @patch("repositories.random.RandomRepository")
     def test_case1(self, random_repo):
 
         cal_srv = CalculatorService(random_repo)
@@ -15,7 +16,7 @@ class TestCalculatorService(TestCase):
         self.assertEqual(actual, expect, "should be return 3")
 
 
-    @patch("services.calculator.RandomRepository")
+    @patch("repositories.random.RandomRepository")
     def test_case2(self, random_repo: RandomRepository):
 
         random_repo.one_to_three.return_value = 3
