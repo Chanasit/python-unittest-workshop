@@ -32,7 +32,7 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with Builtin Unittest
         run: |
-          python -m coverage run -m unittest services/** -vvv
+          python -m coverage run -m unittest app/services/test_** -vvv
           python -m coverage report
 
       - name: Run Trivy vulnerability scanner in fs mode
