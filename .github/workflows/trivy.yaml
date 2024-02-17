@@ -1,0 +1,23 @@
+name: Vulnerability Scan
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  scan:
+    name: Daily Vulnerability Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build an image from Dockerfile
+        run: |
+          docker build -t docker.io/chanasit/python-unittest-workshop:${{ github.sha }} .
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'docker.io/chanasit/python-unittest-workshop:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'

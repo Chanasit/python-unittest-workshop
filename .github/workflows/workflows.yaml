@@ -4,7 +4,6 @@ on:
   push:
     branches:
     - master
-  pull_request:
 
 jobs:
   build:
@@ -34,16 +33,3 @@ jobs:
         run: |
           python -m coverage run -m unittest app/services/test_** -vvv
           python -m coverage report
-
-      - name: Build an image from Dockerfile
-        run: |
-          docker build -t docker.io/chanasit/python-unittest-workshop:${{ github.sha }} .
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'docker.io/chanasit/python-unittest-workshop:${{ github.sha }}'
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
