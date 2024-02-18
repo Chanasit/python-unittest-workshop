@@ -4,10 +4,10 @@ install: ## install packages
 	pip3 intall -r requirements.txt
 
 test: ## run unittest
-	python3 -m unittest app/services/test_**.py -v
+	python3 -m unittest app/**/test_**.py -v
 
 coverage: ## run unittest coverage
-	python3 -m coverage run -m unittest app/services/test_**.py -v
+	python3 -m coverage run -m unittest app/**/test_**.py -v
 	python3 -m coverage report
 
 run: ## run applciation
