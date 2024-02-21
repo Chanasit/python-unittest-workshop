@@ -1,7 +1,7 @@
 export OSTYPE = $(shell uname)
 
 install: ## install packages
-	pip3 intall -r requirements.txt
+	pip3 install -r requirements.txt
 
 test: ## run unittest
 	python3 -m unittest app/**/test_**.py -v

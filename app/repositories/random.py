@@ -1,10 +1,11 @@
 import random
+from app.utils.log import log
 
 
 class RandomRepository:
+    def __init__(self) -> None:
+        pass
 
-  def __init__(self) -> None:
-    pass
-
-  def one_to_three(self):
-    return random.randint(1, 3)
+    @log
+    def one_to_three(self):
+        return random.randint(1, 3)
